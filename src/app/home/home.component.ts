@@ -1,8 +1,7 @@
 import { Component, OnInit } from '@angular/core';
-import { ProductListService } from '../product-list.service';
-import { Router } from '@angular/router';
+import { Router, ActivatedRoute, ParamMap } from '@angular/router';
 import { Location } from '@angular/common';
-
+import { ProductListService } from '../product-list.service';
 @Component({
   selector: 'app-home',
   templateUrl: './home.component.html',
@@ -15,7 +14,7 @@ export class HomeComponent implements OnInit {
   searchedByClicked = false;
   products:any; 
   productCategory:any;
-
+   catId;
   ngOnInit() {
      
     this.getProductList();
@@ -49,12 +48,10 @@ getProductCatList(){
 getProductByCatgory(){
   this.searchedByClicked = true;
 }
+sendCategoryId(id){
+ this.catId=id;
+}
 
-// navigate(prodCat){
-//   this.router.navigateByUrl('/products', {skipLocationChange: true});
-//   this.location.replaceState('/products/'prodCat.id);
-
-// }
 }
 
 export interface Product {

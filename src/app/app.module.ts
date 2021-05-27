@@ -10,7 +10,7 @@ import { MatToolbarModule } from '@angular/material/toolbar';
 import { MatIconModule } from '@angular/material/icon';
 import { NgMatSearchBarModule } from 'ng-mat-search-bar';
 import { MatFormFieldModule }  from '@angular/material/form-field';
-import { ProductListService } from './product-list.service';
+import { ProductListService } from '././product-list.service';
 import { RouterModule } from '@angular/router';
 import { ProductDetailsComponent } from './product-details/product-details.component';
 import { AppRoutingModule } from './/app-routing.module';

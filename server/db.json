@@ -45,9 +45,63 @@
     {
       "id":4,
       "name":"Electronics"
+      
     }
-  ]
+
+  ],
+
+  "electronics":[{
     
+      "id":1,
+      "brand":"LG",
+      "Model":"New 2021",
+      "price":15000,
+      "type": "TV"
+    },
+    {
+      "id":2,
+      "brand":"Sony",
+      "Model":"New 2021",
+      "price":25000,
+      "type": "TV"
+    },
+    {
+        "id":3,
+        "brand":"Samsung",
+        "Model":"New 2021",
+        "price":20000,
+        "type": "TV"
+    },
+    {
+      "id":4,
+      "brand":"Apple",
+      "Model":"Apple 10",
+      "price":70000,
+      "type": "Mobile"
+    },
+    {
+      "id":5,
+      "brand":"Apple",
+      "Model":"Apple 11",
+      "price":80000,
+      "type":"Mobile"
+    },
+    {
+      "id":6,
+      "brand":"Google",
+      "Model":"Pixel 11",
+      "price":85000,
+      "type":"Mobile"
+    },
+    {
+      "id":7,
+      "brand":"Xiomi",
+      "Model":"MI 8 Pro",
+      "price":40000,
+      "type":"Mobile"
+    }]
+  
+  
   }
   
   

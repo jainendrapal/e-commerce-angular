@@ -24,4 +24,9 @@ getProductCat(){
 
   return this.http.get('http://127.0.0.1:3000/categories');
 }
+
+getElectronicsItems(){
+
+  return this.http.get('http://127.0.0.1:3000/electronics');
+}
 }

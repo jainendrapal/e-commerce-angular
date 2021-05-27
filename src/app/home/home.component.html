@@ -1,24 +1,18 @@
 <div class="header">
-  <!-- <div class="mat-dropdown">
-    <mat-search-bar></mat-search-bar>
-  </div> -->
   <div class="header-right">
     <a (click)="getProductByCatgory();">Search by Category</a>
-    
-    <!-- <a  *ngIf="searchedByClicked" *ngFor="let productCat of productCategory" href="#home">{{productCat.name}}</a> -->
-    <!-- <a href="#contact">Login</a>
-    <a href="#cart">Cart</a> -->
   </div>
 </div>
 
 <div class="content" *ngIf="searchedByClicked"> 
    
   <ul>
-    <li *ngFor="let productCat of productCategory">
-    <a  routerLink="/products/{{productCat.id}}">{{productCat.name}} </a>
-    </li>
+    <!-- <li *ngFor="let productCat of productCategory">
+    <a  routerLink="/products/{{productCat.id}}" >{{productCat.name}} </a>
+   </li> -->
+   <li *ngFor="let productCat of productCategory"> 
+      <a routerLink="/product-info/{{productCat.id}}">{{productCat.name}} </a> </li>
   </ul>
-  
 
 </div>
 
