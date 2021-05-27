@@ -12,9 +12,18 @@
     height:100px;
     margin: 10px 0 0 10px;
     display: inline-table;
+    background-color: #cccc;
 
 }
 .heading{
     font-weight: 600;
-    color:rgb(71, 11, 211);
+    color: #ffff;
+    text-align: center;
+    background: #596738cf;
+}
+button{
+    cursor: pointer;
+    color: #1118e0e6;
+    font-size: 12px;
+    margin: 1px 0 4px 10px;
 }

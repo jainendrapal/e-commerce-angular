@@ -22,4 +22,6 @@ describe('HomeComponent', () => {
   it('should create', () => {
     expect(component).toBeTruthy();
   });
+
+  it('check HomeComponet should HomeComponent',()=> expect('HomeComponent').toBe('HomeComponent'));
 });

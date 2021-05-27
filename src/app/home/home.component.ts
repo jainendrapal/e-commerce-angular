@@ -16,10 +16,9 @@ export class HomeComponent implements OnInit {
   productCategory:any;
    catId;
   ngOnInit() {
-     
     this.getProductList();
     this.getProductCatList();
-
+    
   }
 getProductList(){
   

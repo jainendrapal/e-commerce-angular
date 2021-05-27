@@ -1,6 +1,8 @@
 import { Component } from '@angular/core';
 import {FormControl, FormGroup, Validators} from '@angular/forms';
-// import { home} from './home/home.component';
+import { Router, ActivatedRoute, ParamMap } from '@angular/router';
+import { Location } from '@angular/common';
+import { ProductListService } from './product-list.service';
 
 
 @Component({
@@ -11,27 +13,46 @@ import {FormControl, FormGroup, Validators} from '@angular/forms';
 export class AppComponent {
   title = 'angular-unit-test-self';
   
-  loginForm: FormGroup;
-  login = {
-     email:'',
-     password:''
-  };
-
-  submitted =  false;
-  constructor(){
-  this.doLogin();
+  constructor(public __productservice:ProductListService, private location: Location, private router: Router) { }
+  searchedByClicked = false;
+  products:any; 
+  productCategory:any;
+   catId;
+  ngOnInit() {
+    // this.getProductList();
+    // this.getProductCatList();
+    
   }
-
-  doLogin():void{
-    this.loginForm = new FormGroup({
-      'email': new FormControl(this.login.email, [Validators.required]),
-      'password': new FormControl(this.login.password,[Validators.required])
-    });  
+  getProductList(){
+  
+    this.__productservice.getProducts().subscribe( data =>{
+  
+      // console.log('Products', data['Electronics']);
+      this.products = data;
+      console.log('Products', this.products);
+    }, error =>{
+       console.log(error);
+    });
+  
   }
-
-  onSubmit(): void{
-    console.log(this.loginForm);
-    this.submitted = true;
+  
+  getProductCatList(){
+   this.__productservice.getProductCat().subscribe(data => {
+        //  console.log(data)
+         this.productCategory = data;
+         console.log("categories",this.productCategory)
+   }, error => {
+     console.log(error)
+   })
+  
   }
+  
+  getProductByCatgory(){
+    this.searchedByClicked = true;
+  }
+  sendCategoryId(id){
+   this.catId=id;
+  }
+  
 }
 

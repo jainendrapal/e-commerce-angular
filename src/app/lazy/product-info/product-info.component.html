@@ -1,19 +1,21 @@
 <div class="product-info"> 
-   
   <div class="row" >
-   
-   
     <div  class="col-30" *ngFor="let item of data">
-      <span class="heading">{{item.type}}</span>
+      <div class="heading">{{item.type}}</div>
       <div class="product">
-        <ul>
+        <p>Brand: {{item.brand}}</p>
+        <p>Model: {{item.Model}}</p>
+        <p>Price: {{item.price}}</p>
+      </div>
+
+        <!-- <ul>
           <li>{{item.brand}}</li>
           <li>{{item.Model}}</li>
           <li>{{item.price}}</li>
-        </ul>
+        </ul> -->
           
 
-      </div>
+      <button>Add to cart</button>
     </div>
    
   </div>
