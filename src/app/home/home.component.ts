@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { Router, ActivatedRoute, ParamMap } from '@angular/router';
 import { Location } from '@angular/common';
 import { ProductListService } from '../product-list.service';
+import { Product} from '../model/product.model';
 @Component({
   selector: 'app-home',
   templateUrl: './home.component.html',
@@ -9,6 +10,7 @@ import { ProductListService } from '../product-list.service';
 })
 export class HomeComponent implements OnInit {
   selectedValue: string;
+  private listOfProd: Product[];
   constructor(public __productservice:ProductListService, private location: Location, private router: Router) { }
  
   searchedByClicked = false;
@@ -20,13 +22,12 @@ export class HomeComponent implements OnInit {
     this.getProductCatList();
     
   }
-getProductList(){
+getProductList():void{
   
   this.__productservice.getProducts().subscribe( data =>{
 
     // console.log('Products', data['Electronics']);
     this.products = data;
-    console.log('Products', this.products);
   }, error =>{
      console.log(error);
   });
@@ -34,10 +35,13 @@ getProductList(){
 }
 
 getProductCatList(){
+  
  this.__productservice.getProductCat().subscribe(data => {
       //  console.log(data)
        this.productCategory = data;
+       this.listOfProd = data;
        console.log("categories",this.productCategory)
+
  }, error => {
    console.log(error)
  })
@@ -53,7 +57,3 @@ sendCategoryId(id){
 
 }
 
-export interface Product {
-  value: string ;
-  viewValue: string;
-}

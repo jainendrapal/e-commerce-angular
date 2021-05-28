@@ -14,6 +14,7 @@ import { ProductListService } from '././product-list.service';
 import { RouterModule } from '@angular/router';
 import { ProductDetailsComponent } from './product-details/product-details.component';
 import { AppRoutingModule } from './/app-routing.module';
+import { CUSTOM_ELEMENTS_SCHEMA } from '@angular/core';
 
 @NgModule({
   declarations: [
@@ -32,13 +33,12 @@ import { AppRoutingModule } from './/app-routing.module';
     BrowserAnimationsModule,
     MatFormFieldModule,
     HttpClientModule,
-    AppRoutingModule
-
-
-
-
-  ],
+    AppRoutingModule,
+    RouterModule
+ ],
+ 
   providers: [ProductListService],
+  schemas:[CUSTOM_ELEMENTS_SCHEMA],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
