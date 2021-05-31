@@ -15,12 +15,14 @@ import { RouterModule } from '@angular/router';
 import { ProductDetailsComponent } from './product-details/product-details.component';
 import { AppRoutingModule } from './/app-routing.module';
 import { CUSTOM_ELEMENTS_SCHEMA } from '@angular/core';
+import { CalculatorComponent } from './calculator/calculator.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     HomeComponent,
-    ProductDetailsComponent
+    ProductDetailsComponent,
+    CalculatorComponent
   ],
   imports: [
     BrowserModule,

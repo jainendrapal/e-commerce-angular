@@ -4,11 +4,14 @@ import { RouterModule, Routes } from '@angular/router';
 import { HomeComponent } from './home/home.component';
 import { ProductDetailsComponent } from './product-details/product-details.component';
 import { AppComponent } from './app.component';
+import { CalculatorComponent } from './calculator/calculator.component';
+
 const routes: Routes = [
   { path: '', redirectTo: '/home', pathMatch: 'full' },
   { path: 'home', component: HomeComponent },
   // { path: 'products/:id', component: ProductDetailsComponent },
-  { path: 'product-info/:id', loadChildren: './lazy/lazy.module#LazyModule'}
+  { path: 'product-info/:id', loadChildren: './lazy/lazy.module#LazyModule'},
+  { path:'calculator', component:CalculatorComponent }
 ];
 
 @NgModule({

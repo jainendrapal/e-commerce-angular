@@ -1,0 +1,7 @@
+.jumbotron{
+    background-color: azure;
+}
+.container-fluid{
+    width:60% !important;
+    margin:0;
+}

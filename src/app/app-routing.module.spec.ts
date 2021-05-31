@@ -24,23 +24,14 @@ describe("Router:App",()=>{
       router.initialNavigation();
     });
 
-    it("fakeAsync works", fakeAsync(() => {
-        let promise = new Promise(resolve => {
-          setTimeout(resolve, 10);
-        });
-        let done = false;
-        promise.then(() => (done = true));
-        tick(50);
-        expect(done).toBeTruthy();
-      }));
-
-      it('navigate to "" redirects you to home', fakeAsync(() => {
+    
+      it('navigate to "" redirects to home', fakeAsync(() => {
         router.navigate([""]).then(() => {
           expect(location.path()).toBe("/home");
         });
       }));
 
-      it('navigate to "product-info/:id" takes you to product-info', fakeAsync(() => {
+      it('navigate to "product-info/:id" redirect to product-info', fakeAsync(() => {
         router.navigate(["/product-info/:id"]).then(() => {
           expect(location.path()).toBe("/product-info/:id");
         });
